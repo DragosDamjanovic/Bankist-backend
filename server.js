@@ -10,8 +10,8 @@ import transferRouter from "./Routes/TransferRoutes.js";
 dotenv.config();
 connectDatabase();
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 // API
 app.use("/api/import", ImportData);
@@ -22,6 +22,6 @@ app.use("/api/transactions", transferRouter);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 1000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`server run in port ${PORT}`));
